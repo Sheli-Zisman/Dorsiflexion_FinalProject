@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorsiflexion Analysis - ML Angle Measurement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦶 Dorsiflexion Range of Motion Analyzer</h1>
+            <p class="subtitle">AI-Powered Ankle Range of Motion Measurement</p>
+        </header>
+
+        <!-- Range of Motion Analysis -->
+        <div id="range-tab" class="tab-content active">
+            <div class="dual-upload-section">
+                <div class="upload-column">
+                    <h3>Image 1 (Dorsiflexion)</h3>
+                    <div class="upload-box" id="range-upload-1">
+                        <input type="file" id="range-file-input-1" accept="image/png,image/jpeg,image/jpg" hidden>
+                        <div class="upload-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <p>Upload image</p>
+                        </div>
+                        <div class="image-preview" id="range-preview-1" style="display: none;">
+                            <img id="range-preview-img-1" src="" alt="Preview">
+                            <button class="remove-btn" id="range-remove-1">✕</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-column">
+                    <h3>Image 2 (Plantarflexion)</h3>
+                    <div class="upload-box" id="range-upload-2">
+                        <input type="file" id="range-file-input-2" accept="image/png,image/jpeg,image/jpg" hidden>
+                        <div class="upload-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <p>Upload image</p>
+                        </div>
+                        <div class="image-preview" id="range-preview-2" style="display: none;">
+                            <img id="range-preview-img-2" src="" alt="Preview">
+                            <button class="remove-btn" id="range-remove-2">✕</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="analyze-btn" id="range-analyze-btn" disabled>Calculate Range of Motion</button>
+
+            <div class="results" id="range-results" style="display: none;">
+                <h2>Range of Motion Results</h2>
+                <div class="rom-results-grid">
+                    <div class="result-card">
+                        <div class="angle-display">
+                            <span class="angle-label">Image 1:</span>
+                            <span class="angle-value" id="range-angle-1">--</span>
+                            <span class="angle-unit">°</span>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="angle-display">
+                            <span class="angle-label">Image 2:</span>
+                            <span class="angle-value" id="range-angle-2">--</span>
+                            <span class="angle-unit">°</span>
+                        </div>
+                    </div>
+                    <div class="result-card highlight">
+                        <div class="angle-display">
+                            <span class="angle-label">Range of Motion:</span>
+                            <span class="angle-value large" id="range-rom">--</span>
+                            <span class="angle-unit">°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="annotated-images-grid" id="range-annotated" style="display: none;">
+                    <div class="annotated-image-item">
+                        <h3>Image 1 - Annotated</h3>
+                        <img id="range-annotated-img-1" src="" alt="Annotated 1">
+                    </div>
+                    <div class="annotated-image-item">
+                        <h3>Image 2 - Annotated</h3>
+                        <img id="range-annotated-img-2" src="" alt="Annotated 2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-message" id="range-error" style="display: none;"></div>
+            <div class="loading" id="range-loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing images...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

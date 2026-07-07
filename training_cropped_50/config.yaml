@@ -1,0 +1,49 @@
+Task: google-pix
+scorer: r2r
+date: Oct5
+multianimalproject: false
+identity: null
+project_path: C:\Users\sheli\Desktop\Final_Project\dorsiflexion-ml-clean\training_cropped_50
+video_sets:
+  naomi: null
+  naomi_new: null
+bodyparts:
+- shin
+- ankle
+- fifth
+start: 0
+stop: 1
+numframes2pick: 20
+skeleton:
+- - shin
+  - ankle
+- - ankle
+  - fifth
+skeleton_color: black
+pcutoff: 0.6
+dotsize: 12
+alphavalue: 0.7
+colormap: rainbow
+TrainingFraction:
+- 0.8
+iteration: 0
+default_net_type: resnet_50
+default_augmenter: imgaug
+snapshotindex: -1
+batch_size: 12
+cropping: false
+x1: 0
+x2: 640
+y1: 277
+y2: 624
+corner2move2:
+- 50
+- 50
+move2corner: true
+engine: pytorch
+detector_snapshotindex: -1
+detector_batch_size: 1
+SuperAnimalConversionTables: null
+displayiters: 25
+max_snapshots_to_keep: 10
+saveiters: 250

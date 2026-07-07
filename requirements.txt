@@ -1,0 +1,12 @@
+flask
+flask-cors
+numpy
+pandas
+matplotlib
+pillow
+pyyaml
+opencv-python-headless
+torch
+torchvision
+torchaudio
+deeplabcut==3.0.0rc13
